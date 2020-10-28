@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// estas dos librerias se complementan react dom hace que funcione en el navegador
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// cuando es un archivo de forma local se pone de la siguiente manera
+import App from './App'
+// importamos el componente que vamos a estar usando en esta pagina
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render( <App/> , document.getElementById('root'));
+//  este metodo renderiza la aplicacion
+// para ello le pasamos el putno de acceso de la aplicacion
