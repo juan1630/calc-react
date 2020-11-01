@@ -1,6 +1,9 @@
 // importacion
 import React from 'react';
 import Result from './components/result';
+import Button from './components/button';
+
+// siempre se pone primero los componentes y despues el css
 import './App.css'
 
 
@@ -10,8 +13,24 @@ import './App.css'
 // funcion de flecha o arrow function
 const App = () => {
 
+const textHandlerFunction = text => {
+     console.log("Button ", text);
+  }
   // cuerpo de la funcion
-  return (  <Result  value={0}  /> );
+  return (  <main>
+     <Result value={"0"} />
+     <div className="numbers" >
+           <Button  text={1}  clickHandler={ textHandlerFunction }  />
+           <Button  text={2}  clickHandler={ textHandlerFunction } />
+           <Button  text={3}  clickHandler={ textHandlerFunction } />
+           <Button  text={4}  clickHandler={ textHandlerFunction } />
+     </div>
+    </main>
+
+  );
+  // se debn de cerrar todas las etiquetas
+  // si no le paso nigun parametro por medio de propTypes no da nigun error
+
 }
 
 // para enviar un valor de tipo string se envia por ""

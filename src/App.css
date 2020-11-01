@@ -9,7 +9,7 @@ body{
 }
 
 .App {
-  text-align: center;
+  text-align: right;
   font-size: 2em;
   font-weight: 100;
   margin-top: 1rem;
@@ -26,3 +26,13 @@ body{
     box-shadow: 0 19px 38px rgba(25, 25, 25, .24),
   0 15px 12px rgba(19, 19, 19, .12);
   }
+
+.numbers >button {
+  margin: 0  2.6rem;
+  width: 25%;
+  height: 50%;
+  padding: 0.8rem;
+  background-color: #292f36;
+  color:white;
+  font-size:1.6rem;
+}
