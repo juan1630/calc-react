@@ -1,5 +1,5 @@
 // importacion
-import React from 'react';
+import React, { useState } from 'react';
 import Result from './components/result';
 
 import MathOperations from './components/MathOperations';
@@ -14,12 +14,18 @@ import './App.css'
 // funcion de flecha o arrow function
 const App = () => {
   // cuerpo de la funcion
+
+  // inciamos con el manejo de los hooks
+  // valor inicial del estado
+const [stack, setStack] = useState("");
+// array destructuring
+
+  //importamos de React
   return (  <main>
-     <Result value={"0"} />
-     <Numbers onClickNumber={ number => console.log("Numbers",number) } />
+     <Result value={stack} />
+     <Numbers onClickNumber={ numbers => setStack(numbers)  } />
      <MathOperations onclickOperation={operation => console.log("Operation:", operation) }
-        onClickEqual={ equal => console.log('Equal event', equal)  }
-      />
+        onClickEqual={ equal => console.log('Equal event', equal)  }/>
 
       <div className="functions" >
         <Functions onContentClear={ clear => console.log('limpiando', clear) } onDelete={ deleted => console.log('Borrando', deleted)  }  />
@@ -27,7 +33,7 @@ const App = () => {
     </main>
 
   );
-  // se debn de cerrar todas las etiquetas
+  // se deben de cerrar todas las etiquetas
   // si no le paso nigun parametro por medio de propTypes no da nigun error
 
 }

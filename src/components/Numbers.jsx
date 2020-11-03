@@ -6,26 +6,35 @@ import Button from './button';
 
 // dont repeat yourself
 
-  const numbers = [1,2,3,4,5,6,7,8,9,0];
+const numbers = [1, 2 ,3, 4, 5, 6, 7, 8, 9, 0]
 
-
+// PROPIEDAD KEY
+// la propiedad key se usa cuando se generan listas de componentes dinamicos
+//  Sirve para que react identifique cada elemento de la lista y cuales elemetnos cambian o se elimnan de la lista
+// solo se debe de usar cuando los componentes son hermanos
+// no usar el indice de la lista
 const renderButtons = onClickNumber => {
-  const renderButton = number => ( <Button text={number.toString()}  clickHandler={onClickNumber} />)
+    const renderButton = (number) => (
+      <Button
+      key={number}
+      text={number.toString()}
+      clickHandler={onClickNumber} />)
 
- return  numbers.map( renderButton );
+    return  numbers.map( renderButton );
 }
 
-const Numbers = ({onClickNumber}) => (
-  <section  className="numbers">
+const Numbers = ({onClickNumber}) => {
+ return  <section  className="numbers">
     {
       renderButtons(onClickNumber)
     }
-  </section>);
+  </section>
 
-//777 139 89 18
+};
+
 
 Numbers.propTypes={
-  onClickNumber: PropTypes.func.isRequired
+  onClickNumber:  PropTypes.func.isRequired
 }
 
 export default Numbers;
