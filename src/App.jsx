@@ -1,4 +1,6 @@
+/*  eslint no-eval: 0*/
 // importacion
+
 import React, { useState } from 'react';
 import Result from './components/result';
 
@@ -6,6 +8,8 @@ import MathOperations from './components/MathOperations';
 import Functions from './components/functions';
 import Numbers from './components/Numbers';
 
+import words from 'lodash.words';
+//
 // siempre se pone primero los componentes y despues el css
 import './App.css'
 
@@ -18,21 +22,36 @@ const App = () => {
   // inciamos con el manejo de los hooks
   // valor inicial del estado
 const [stack, setStack] = useState("");
+const items = words(stack,/[^-^+^+^/]+/g );
+//      es verdadero ? es verdaderos ? resultadoVerdaderos : resultadoFalso
+const value = items.length > 0  ? items[items.length -1] : "0";
+// nos devuelva un array de los numeros que se ingresan
 // array destructuring
-
+// en stack vamos acumulando los numeros
   //importamos de React
-  return (  <main>
-     <Result value={stack} />
-     <Numbers onClickNumber={ numbers => setStack(numbers)  } />
-     <MathOperations onclickOperation={operation => console.log("Operation:", operation) }
-        onClickEqual={ equal => console.log('Equal event', equal)  }/>
+
+  // hacemos una concatenacin de strings
+  return (<main>
+     <Result value={value} />
+     <Numbers onClickNumber={ numbers => setStack(`${stack} ${numbers}`)  } />
+     <MathOperations onclickOperation={operation =>{
+        setStack(`${stack} ${operation}`);
+     }  }
+        onClickEqual={ equal => {
+          setStack(eval(stack).toString());
+        }  }/>
 
       <div className="functions" >
-        <Functions onContentClear={ clear => console.log('limpiando', clear) } onDelete={ deleted => console.log('Borrando', deleted)  }  />
+        <Functions onContentClear={ clear =>  setStack("") } onDelete={ deleted => {
+          if( stack.length > 0 ){
+            const newStack = stack.substring(0, stack.length - 1);
+            setStack(newStack);
+          }else {
+            return
+          }
+        }  }  />
       </div>
-    </main>
-
-  );
+    </main>);
   // se deben de cerrar todas las etiquetas
   // si no le paso nigun parametro por medio de propTypes no da nigun error
 
