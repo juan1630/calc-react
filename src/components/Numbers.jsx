@@ -6,7 +6,7 @@ import Button from './button';
 
 // dont repeat yourself
 
-const numbers = [1, 2 ,3, 4, 5, 6, 7, 8, 9, 0]
+const numbers = [ 7, 8, 9, 4, 5, 6, 1, 2 ,3, 0]
 
 // PROPIEDAD KEY
 // la propiedad key se usa cuando se generan listas de componentes dinamicos
