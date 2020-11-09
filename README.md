@@ -70,3 +70,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### Esta es una calculadora basica del curso de recat
+
+### Se termino la seccion del curso de reactjs
+- SOLID
+- DEBUGGER
+- EMC
+- PROPTYPES
+- NPX
+- webpack
+- HOOKS
+- DESTRUCUTIRNG Y ARRAY DESTRUCUTIRNG
+- REGEX
+- LOADASH
+- OPERADOR TERNARIO
